@@ -1,0 +1,48 @@
+volumes:
+  formula-app-data:
+    external: true
+
+services:
+  postgres:
+    image: "postgres:14.2-bullseye"
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+    build:
+      context: ./relational-data
+      dockerfile: ./Dockerfile
+    volumes:
+      - formula-app-data:/var/lib/postgresql/data
+    ports:
+      - 15432:5432
+  f1-backend:
+    depends_on:
+      - postgres
+    image: backend
+    container_name: backend
+    build:
+      context: ./f1-backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=formula_user
+      - SPRING_DATASOURCE_PASSWORD=formula_pw
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  ghi:
+    image: node:lts-bullseye
+    command: bash -c "npm install && npm start"
+    volumes:
+      - ./ghi:/app
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      HOST_OS: ${OS}
+      NODE_ENV: development
+      HOST: "0.0.0.0"
+      PUBLIC_URL: http://localhost:3000
+      REACT_APP_BOSS_API_HOST: http://localhost:8081
+      REACT_APP_GOOGLE_MAPS_API_KEY: ${REACT_APP_GOOGLE_MAPS_API_KEY}
