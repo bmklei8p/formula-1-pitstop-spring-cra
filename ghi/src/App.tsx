@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DriverStandings from './features/standings/DriverStandings';
+import Standings from './features/standings/Standings';
 import TracksMap from './features/tracks/TracksMap';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<TracksMap />} />
-            <Route path="/driverstandings" element={<DriverStandings />} />
+            <Route path="/driverstandings" element={<Standings />} />
           </Routes>
         </div>
       </BrowserRouter>
