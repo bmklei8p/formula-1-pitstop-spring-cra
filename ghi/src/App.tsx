@@ -9,8 +9,8 @@ function App() {
       <BrowserRouter>
         <div>
           <Routes>
-            <Route path="/" element={<TracksMap />} />
-            <Route path="/driverstandings" element={<Standings />} />
+            <Route path="/tracks" element={<TracksMap />} />
+            <Route path="/standings" element={<Standings />} />
           </Routes>
         </div>
       </BrowserRouter>

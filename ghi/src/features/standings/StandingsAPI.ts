@@ -1,28 +1,49 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-interface DriverStandings {
-    id: number,
+export interface StandingsListsReturn {
+  DriverStandings: DriverStandingsPosition[] | null
+  ConstructorStandings: ConstructorStandingsPosition[] | null
+}
+export interface DriverStandingsPosition {
+  position: number,
+  points: number,
+  Driver: {
+    givenName: string,
+    familyName: string,
+  }
+  Constructors: {
     name: string,
+  }
+}
+export interface ConstructorStandingsPosition {
+  position: number,
+  points: number,
+  Constructor: {
+    name: string,
+  }
+}
+interface Standings {
+    MRData: {
+      StandingsTable: {
+        StandingsLists: StandingsListsReturn[]
+      }
+    }
 }
 
-interface ConstructorStandings {
-  id: number,
-  name: string,
-}
 
-type DriverStandingsResponse = DriverStandings[];
-type ConstructorStandingsResponse = ConstructorStandings[];
+type DriverStandingsResponse = Standings;
+type ConstructorStandingsResponse = Standings;
 
 export const standingsApi = createApi({
-    reducerPath: "Standings",
+    reducerPath: "standings",
     baseQuery: fetchBaseQuery({
-      baseUrl: process.env.REACT_APP_ERGAST_API_URL as string,
+      baseUrl: "https://ergast.com/api/" as string,
     }),
     tagTypes: ["Driver Standings", "Constructor Standings"],
     endpoints: (builder) => ({
       getDriverStandings: builder.query<DriverStandingsResponse, void>({
         query: () =>
-          `f1/current/driverStandings.json`,
+          "f1/current/driverStandings.json",
           providesTags: ["Driver Standings"],
       }),
       getConstructorStandings: builder.query<ConstructorStandingsResponse, void>({
