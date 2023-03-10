@@ -6,7 +6,7 @@ export const DriverStandings = () => {
     const  { data: driverStandingsData, isLoading} = useGetDriverStandingsQuery()
     if (isLoading) return <div>Loading...</div>
     return (
-        <div>
+        <div className="standings-table-box">
             <table>
                 <thead>
                     <tr>

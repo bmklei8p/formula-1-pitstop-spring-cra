@@ -4,7 +4,6 @@ import { ConstructorStandingsPosition } from './StandingsAPI'
 
 export const ConstructorStandings = () => {
     const  { data: constructorStandingsData, isLoading} = useGetConstructorStandingsQuery()
-    console.log(constructorStandingsData)
     if (isLoading) return <div>Loading...</div>
     return (
         <div>
@@ -13,7 +12,7 @@ export const ConstructorStandings = () => {
                     <tr>
                         <td>Position</td>
                         <td>Team Name</td>
-                        <td>Team Points</td>
+                        <td>Points</td>
                     </tr>
                 </thead>
                 <tbody>

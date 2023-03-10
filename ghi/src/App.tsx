@@ -5,14 +5,12 @@ import TracksMap from './features/tracks/TracksMap';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
-        <div>
           <Routes>
             <Route path="/tracks" element={<TracksMap />} />
             <Route path="/standings" element={<Standings />} />
           </Routes>
-        </div>
       </BrowserRouter>
     </div>
   );
