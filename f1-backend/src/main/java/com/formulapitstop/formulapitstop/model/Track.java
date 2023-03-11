@@ -29,8 +29,8 @@ public class Track {
     @Column(name = "lapRecordTime", nullable = true)
     private String lapRecordTime;
 
-    @Column(name = "trackPhotosList", nullable = true)
-    private ArrayList<String> trackPhotosList;
+    // @Column(name = "trackPhotosList", nullable = true)
+    // private ArrayList<String> trackPhotosList;
 
     public Integer getId() {
         return id;
@@ -72,13 +72,13 @@ public class Track {
         this.lapRecordTime = lapRecordTime;
     }
 
-    public ArrayList<String> getTrackPhotosList() {
-        return trackPhotosList;
-    }
+    // public ArrayList<String> getTrackPhotosList() {
+    //     return trackPhotosList;
+    // }
 
-    public void setTrackPhotosList(ArrayList<String> trackPhotosList) {
-        this.trackPhotosList = trackPhotosList;
-    }
+    // public void setTrackPhotosList(ArrayList<String> trackPhotosList) {
+    //     this.trackPhotosList = trackPhotosList;
+    // }
 
     @Override
     public String toString() {

@@ -1,10 +1,10 @@
-import { useGetConstructorStandingsQuery } from "./StandingsAPI";
-import { ConstructorStandingsPosition } from './StandingsAPI'
+// import { useGetConstructorStandingsQuery } from "./StandingsAPI";
+// import { ConstructorStandingsPosition } from './StandingsAPI'
 
 
 export const ConstructorStandings = () => {
-    const  { data: constructorStandingsData, isLoading} = useGetConstructorStandingsQuery()
-    if (isLoading) return <div>Loading...</div>
+    // const  { data: constructorStandingsData, isLoading} = useGetConstructorStandingsQuery()
+    // if (isLoading) return <div>Loading...</div>
     return (
         <div>
             <table>
@@ -15,7 +15,7 @@ export const ConstructorStandings = () => {
                         <td>Points</td>
                     </tr>
                 </thead>
-                <tbody>
+                {/* <tbody>
                     {constructorStandingsData?.MRData.StandingsTable
                     .StandingsLists[0].ConstructorStandings?.map(
                         (position: ConstructorStandingsPosition) => {
@@ -27,7 +27,7 @@ export const ConstructorStandings = () => {
                                 </tr>
                             );
                         })}
-                </tbody>
+                </tbody> */}
             </table>
         </div>
   )

@@ -1,22 +1,27 @@
 import { useGetDriverStandingsQuery } from "./StandingsAPI";
-import { DriverStandingsPosition } from './StandingsAPI'
+// import { DriverStandingsPosition } from './StandingsAPI'
 
 
 export const DriverStandings = () => {
+    console.log('Performing useGetDriverStandingsQuery')
     const  { data: driverStandingsData, isLoading} = useGetDriverStandingsQuery()
     if (isLoading) return <div>Loading...</div>
+    if (!isLoading) {
+        console.log(driverStandingsData)
+    }
     return (
         <div className="standings-table-box">
             <button>Drivers</button>
             <table>
                 <thead>
                     <tr>
+                        <td></td>
                         <td>Position</td>
                         <td>Driver Name</td>
                         <td>Points</td>
                     </tr>
                 </thead>
-                <tbody>
+                {/* <tbody>
                     {driverStandingsData?.MRData.StandingsTable
                     .StandingsLists[0].DriverStandings?.map(
                         (position: DriverStandingsPosition) => {
@@ -28,7 +33,7 @@ export const DriverStandings = () => {
                                 </tr>
                             );
                         })}
-                </tbody>
+                </tbody> */}
             </table>
         </div>
   )

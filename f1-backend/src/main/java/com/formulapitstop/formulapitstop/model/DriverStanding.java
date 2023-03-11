@@ -12,11 +12,17 @@ public class DriverStanding {
     @Column(name = "position", nullable = false)
     private Integer position;
 
-    @Column(name = "driverName", nullable = false)
-    private String driverName;
+    @Column(name = "givenName", nullable = false)
+    private String givenName;
+
+    @Column(name = "familyName", nullable = false)
+    private String familyName;
 
     @Column(name = "points", nullable = false)
     private Integer points;
+
+    @Column(name = "constructor", nullable = false)
+    private String constructor;
 
     public Integer getPosition() {
         return position;
@@ -26,13 +32,28 @@ public class DriverStanding {
         this.position = position;
     }
 
-    public String getDriverName() {
-        return driverName;
+    public String getGivenName() {
+        return givenName;
     }
 
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
+    public void setGivenName(String givenName) {
+        this.givenName = givenName;
     }
+
+    public String getFamilyName() {
+        return familyName;
+    }
+
+    public void setFamilyName(String familyName) {
+        this.familyName = familyName;
+    }
+    // public String getDriverName() {
+    //     return driverName;
+    // }
+
+    // public void setDriverName(String driverName) {
+    //     this.driverName = driverName;
+    // }
 
     public Integer getPoints() {
         return points;
@@ -44,6 +65,14 @@ public class DriverStanding {
 
     @Override
     public String toString() {
-        return "DriverStandings [position=" + position + ", driverName=" + driverName + ", points=" + points + "]";
+        return "DriverStandings [position=" + position + ", points=" + points + "]";
+    }
+
+    public String getConstructor() {
+        return constructor;
+    }
+
+    public void setConstructor(String constructor) {
+        this.constructor = constructor;
     }
 }
