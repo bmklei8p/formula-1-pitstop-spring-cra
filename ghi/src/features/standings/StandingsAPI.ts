@@ -31,28 +31,6 @@ interface Standings {
     }
 }
 
-export interface StandingsState {
-  driversStandings: DriverStandingsPosition[],
-  constructorsStandings: ConstructorStandingsPosition[]
-}
-
-export const initialState: StandingsState = {
-  driversStandings: [],
-  constructorsStandings: []
-}
-// addToDriversStandings: (state, action: PayloadAction<StandingsListsReturn>) => {
-//  state.driversStandings.concat(action.payload.DriverStandings?)
-// export const standingsSlice = createSlice({
-//   name: 'standings',
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder
-//     .addCase()
-//     }
-//   }
-// })
-
 type DriverStandingsResponse = Standings;
 type ConstructorStandingsResponse = Standings;
 

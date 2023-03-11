@@ -7,12 +7,13 @@ export const DriverStandings = () => {
     if (isLoading) return <div>Loading...</div>
     return (
         <div className="standings-table-box">
+            <button>Drivers</button>
             <table>
                 <thead>
                     <tr>
                         <td>Position</td>
                         <td>Driver Name</td>
-                        <td>Driver Points</td>
+                        <td>Points</td>
                     </tr>
                 </thead>
                 <tbody>
