@@ -1,23 +1,19 @@
 import { useGetDriverStandingsQuery } from "./StandingsAPI";
-// import { DriverStandingsPosition } from './StandingsAPI'
+import { DriverStandingsPosition } from './StandingsAPI'
 
 
 export const DriverStandings = () => {
-    console.log('Performing useGetDriverStandingsQuery')
-    const  { data: driverStandingsData, isLoading} = useGetDriverStandingsQuery()
-    if (isLoading) return <div>Loading...</div>
-    if (!isLoading) {
-        console.log(driverStandingsData)
-    }
+    // console.log('Performing useGetDriverStandingsQuery')
+    // const  { data: driverStandingsData, isLoading} = useGetDriverStandingsQuery()
+    // if (isLoading) return <div>Loading...</div>
+
     return (
-        <div className="standings-table-box">
-            <button>Drivers</button>
+        <div>
             <table>
                 <thead>
                     <tr>
-                        <td></td>
                         <td>Position</td>
-                        <td>Driver Name</td>
+                        <td>Drivers Name</td>
                         <td>Points</td>
                     </tr>
                 </thead>
