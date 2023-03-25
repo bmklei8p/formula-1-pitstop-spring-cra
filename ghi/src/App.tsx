@@ -7,27 +7,26 @@ import { createTheme } from '@mui/material/styles'
 import { Navbar } from './features/navbar/Navbar';
 import { useAppSelector } from './app/hooks'
 import { useMemo } from 'react';
-import  {themeSettings} from './styles/theme/theme'
+import  {themeOptions} from './styles/theme/theme'
 
 
 function App() {
   const mode = useAppSelector((state) => state.mode.darkMode);
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
+  const theme = useMemo(() => createTheme(themeOptions(mode)), [mode])
 
   return (
     <ThemeProvider theme={theme}>
-    <>
-      <Navbar />
-      <Container maxWidth={'xl'}>
-        <BrowserRouter>
+
+      <BrowserRouter>
+        <Navbar />
+        <Container maxWidth={'xl'}>
             <Routes>
               <Route path="/tracks" element={<TracksMap />} />
               <Route path="/standings" element={<Standings />} />
             </Routes>
-        </BrowserRouter>
-      </Container>
-    </>
-    // </ThemeProvider>
+          </Container>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

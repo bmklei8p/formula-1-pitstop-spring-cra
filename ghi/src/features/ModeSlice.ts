@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { PaletteMode } from "@mui/material";
 
 export interface ModeState {
-    darkMode: string;
+    darkMode: PaletteMode;
 }
 
 const initialState: ModeState = {
@@ -12,7 +13,7 @@ export const modeStateSlice = createSlice({
     name: 'mode',
     initialState,
     reducers: {
-        toggle: (state, action: PayloadAction<string>) => {
+        toggle: (state, action: PayloadAction<PaletteMode>) => {
             state.darkMode = action.payload;
         },
     },
