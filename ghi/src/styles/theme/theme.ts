@@ -5,6 +5,9 @@ declare module '@mui/material/styles' {
   interface Palette {
     neutral?: PaletteColor;
   }
+  interface TypeBackground {
+    alt?: string;
+  }
 }
 
 export const colorTokens = {
