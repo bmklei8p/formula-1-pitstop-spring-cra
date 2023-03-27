@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles'
 import { Box, Typography } from '@mui/material'
 
+
 export const AppbarContainer = styled(Box)(() => ({
     display: 'flex',
     marginTop: 4,
@@ -11,7 +12,8 @@ export const AppbarContainer = styled(Box)(() => ({
 
 export const AppbarHeader = styled(Typography)(() => ({
     padding: '4px',
-    flexGrow: 1,
-    fontSize: '"Montez", "Cursive"',
-    color: "Red",
+    flexGrow: 3,
+    fontSize: '2em',
+    fontFamily: '"Asap"',
+    color: "White",
 }));

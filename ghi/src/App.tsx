@@ -16,7 +16,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-
       <BrowserRouter>
         <Navbar />
         <Container maxWidth={'xl'}>

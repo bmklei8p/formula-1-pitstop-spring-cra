@@ -9,17 +9,20 @@ import { NavbarDesktop } from './NavbarDesktop';
 
 
 export const Navbar = () => {
+  const links = [{linkName: 'Schedule', linkURL: '/schedule'}, {linkName: 'Tracks Map', linkURL: '/tracks'}, {linkName: 'Standings', linkURL: '/standings'}, {linkName: 'Drivers', linkURL: '/drivers'}, {linkName: 'Teams', linkURL: '/teams'},]
   // theme and colors
   const theme = useTheme();
-  const alt = theme.palette.background.alt;
+  // const alt = theme.palette.background.alt;
+  const alt = "red";
+
 
   // matches is true when media is a phone/tablet size
   // const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: "1rem 6%", backgroundColor: alt }}>
-      {matches ? <NavbarMobile /> : <NavbarDesktop matches={matches} />}
+    <Box sx={{display: 'flex', justifyContent: 'center', backgroundColor: alt}}>
+      {matches ? <NavbarMobile /> : <NavbarDesktop links={links} matches={matches} />}
     </Box>
   )
 }
