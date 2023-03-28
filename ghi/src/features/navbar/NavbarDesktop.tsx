@@ -26,12 +26,6 @@ interface NavbarProps {
   links: NavbarLinkDetails[],
 }
 
-// declare module '@mui/material' {
-//   // allow configuration using `createTheme`
-//   interface ListItemButton {
-//     key?: Key;
-//   }
-// }
 
 export const NavbarDesktop = (props: NavbarProps) => {
   const theme = useTheme();
@@ -42,17 +36,13 @@ export const NavbarDesktop = (props: NavbarProps) => {
   // const alt = theme.palette.background.alt;
 
   const mode = useAppSelector((state) => state.mode.darkMode);
-  console.log(mode);
-  console.log(typeof mode);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleNavBarListItemClick = (link: NavbarLinkDetails) => {
     navigate(link.linkURL);
   }
-  // const handleKeyChange = (link: string) => {
-  //   let key = typeof
-  // }
+
   return (
     <AppbarContainer>
         <AppbarHeader>
